@@ -5,7 +5,7 @@ $(document).ready(function(){
   displaySetupForm();
 });//end document ready
 
-//Display an input for dependent on number of players
+//Display an input form dependent on number of players
 var displaySetupForm = function(){
   //get number of players
   $('#playersNumSelect').on('click', function(){
@@ -53,4 +53,12 @@ var displaySetupForm = function(){
 
 
 
+};
+//display info for each player (color, specialty)
+var displayPlayerInfo = function(){
+  //on click for form submit
+  //collect player names
+  //put into an object
+  // randomly assign color on server??
+  //randomly assign specialty on server??
 };
