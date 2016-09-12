@@ -67,12 +67,18 @@ var displayPlayerInfo = function(){
         var playerOne = ($('body').find('#playerOneName').val());
         var playerTwo = ($('body').find('#playerTwoName').val());
         console.log("player names =", playerOne, playerTwo);
+        //add to object
+        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo};
+        console.log(playerNames);
       break;
       case 3:
        playerOne = ($('body').find('#playerOneName').val());
        playerTwo = ($('body').find('#playerTwoName').val());
        var playerThree = ($('body').find('#playerThreeName').val());
       console.log("player names =", playerOne, playerTwo, playerThree);
+      //add to object
+      playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+        playerThreeName: playerThree};
       break;
       case 4:
         playerOne = ($('body').find('#playerOneName').val());
@@ -80,6 +86,9 @@ var displayPlayerInfo = function(){
         playerThree = ($('body').find('#playerThreeName').val());
         var playerFour = ($('body').find('#playerFourName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour);
+        //add to object
+        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+          playerThreeName: playerThree, playerFourName:playerFour};
       break;
       case 5:
         playerOne = ($('body').find('#playerOneName').val());
@@ -88,6 +97,9 @@ var displayPlayerInfo = function(){
         playerFour = ($('body').find('#playerFourName').val());
         var playerFive = ($('body').find('#playerFiveName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive);
+        //add to object
+        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+          playerThreeName: playerThree, playerFourName:playerFour, playerFiveName: playerFive};
       break;
       case 6:
         playerOne = ($('body').find('#playerOneName').val());
@@ -97,11 +109,14 @@ var displayPlayerInfo = function(){
         playerFive = ($('body').find('#playerFiveName').val());
         var playerSix = ($('body').find('#playerSixName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive, playerSix);
+        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+          playerThreeName: playerThree, playerFourName:playerFour,
+          playerFiveName: playerFive, playerSixName: playerSix};
       break;
       default:
       console.log("Something has gone wrong");
     }
-    //put into an object
+    //send player names to server
     // randomly assign color on server??
     //randomly assign specialty on server??
   });
