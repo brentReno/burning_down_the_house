@@ -3,6 +3,7 @@ var numPlayers;
 $(document).ready(function(){
   console.log("JQ is sourced");
   displaySetupForm();
+  displayPlayerInfo();
 });//end document ready
 
 //Display an input form dependent on number of players
@@ -57,6 +58,9 @@ var displaySetupForm = function(){
 //display info for each player (color, specialty)
 var displayPlayerInfo = function(){
   //on click for form submit
+  $('body').on('click' , '#sendPlayers',  function(){
+    console.log("in sendPlayers on Click");
+  });
   //collect player names
   //put into an object
   // randomly assign color on server??
