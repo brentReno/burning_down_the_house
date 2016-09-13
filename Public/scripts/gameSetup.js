@@ -10,8 +10,8 @@ $(document).ready(function(){
 
 //Display an input form dependent on number of players
 var displaySetupForm = function(){
-  //get number of players
-  $('#playersNumSelect').on('click', function(){
+    //get number of players
+    $('#playersNumSelect').on('click', function(){
     console.log('in playersNumSelect on click');
     numPlayers = $(".numPlayersIn").val();
     gameType = $(".difficultyIn").val();
