@@ -19,3 +19,8 @@ app.get('/', function(req, res){
 
 //set public folder for use
 app.use(express.static('public'));
+
+app.post('/', function(req, res){
+  console.log('You hit the post route');
+  res.send("hello from the server");
+});

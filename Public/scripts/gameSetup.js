@@ -117,6 +117,14 @@ var displayPlayerInfo = function(){
       console.log("Something has gone wrong");
     }
     //send player names to server
+    $.ajax({
+      type: 'POST',
+      url: '/',
+      data: playerNames,
+      success: function(data){
+        console.log("Ajax success:", data);
+      }
+    });//end AJAX call
     // randomly assign color on server??
     //randomly assign specialty on server??
   });
