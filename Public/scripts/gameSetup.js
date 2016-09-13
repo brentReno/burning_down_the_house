@@ -65,54 +65,42 @@ var gameSetup = function(){
   $('body').on('click' , '#sendPlayers',  function(){
     console.log("in sendPlayers on Click");
     //collect player names
+    var playerOne = ($('body').find('#playerOneName').val());
+    var playerTwo = ($('body').find('#playerTwoName').val());
+    var playerThree = ($('body').find('#playerThreeName').val());
+    var playerFour = ($('body').find('#playerFourName').val());
+    var playerFive = ($('body').find('#playerFiveName').val());
+    var playerSix = ($('body').find('#playerSixName').val());
+
+    //create game info object
     switch (Number(numPlayers)) {
       case 2:
-        var playerOne = ($('body').find('#playerOneName').val());
-        var playerTwo = ($('body').find('#playerTwoName').val());
         console.log("player names =", playerOne, playerTwo);
         //add to object
-        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo};
+        gameInfo ={ type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo};
         console.log(gameInfo);
       break;
       case 3:
-       playerOne = ($('body').find('#playerOneName').val());
-       playerTwo = ($('body').find('#playerTwoName').val());
-       var playerThree = ($('body').find('#playerThreeName').val());
       console.log("player names =", playerOne, playerTwo, playerThree);
       //add to object
-      gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
+      gameInfo ={ type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
         playerThreeName: playerThree};
       break;
       case 4:
-        playerOne = ($('body').find('#playerOneName').val());
-        playerTwo = ($('body').find('#playerTwoName').val());
-        playerThree = ($('body').find('#playerThreeName').val());
-        var playerFour = ($('body').find('#playerFourName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour);
         //add to object
-        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
+        gameInfo ={ type: gameType,players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour};
       break;
       case 5:
-        playerOne = ($('body').find('#playerOneName').val());
-        playerTwo = ($('body').find('#playerTwoName').val());
-        playerThree = ($('body').find('#playerThreeName').val());
-        playerFour = ($('body').find('#playerFourName').val());
-        var playerFive = ($('body').find('#playerFiveName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive);
         //add to object
-        playerNames ={type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
+        playerNames ={type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour, playerFiveName: playerFive};
       break;
       case 6:
-        playerOne = ($('body').find('#playerOneName').val());
-        playerTwo = ($('body').find('#playerTwoName').val());
-        playerThree = ($('body').find('#playerThreeName').val());
-        playerFour = ($('body').find('#playerFourName').val());
-        playerFive = ($('body').find('#playerFiveName').val());
-        var playerSix = ($('body').find('#playerSixName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive, playerSix);
-        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
+        gameInfo ={ type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour,
           playerFiveName: playerFive, playerSixName: playerSix};
       break;
