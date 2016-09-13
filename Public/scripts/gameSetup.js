@@ -1,10 +1,11 @@
 console.log("You may now start the fire!");
 var numPlayers;
-var playerNames ={};
+var gameType;
+var gameInfo ={};
 $(document).ready(function(){
   console.log("JQ is sourced");
   displaySetupForm();
-  displayPlayerInfo();
+  gameSetup();
 });//end document ready
 
 //Display an input form dependent on number of players
@@ -13,7 +14,9 @@ var displaySetupForm = function(){
   $('#playersNumSelect').on('click', function(){
     console.log('in playersNumSelect on click');
     numPlayers = $(".numPlayersIn").val();
+    gameType = $(".difficultyIn").val();
     console.log(numPlayers);
+    console.log(gameType);
       //send form based on number of players
       var playerDiv;
       switch (Number(numPlayers)) {
@@ -57,7 +60,7 @@ var displaySetupForm = function(){
 
 };
 //display info for each player (color, specialty)
-var displayPlayerInfo = function(){
+var gameSetup = function(){
   //on click for form submit
   $('body').on('click' , '#sendPlayers',  function(){
     console.log("in sendPlayers on Click");
@@ -68,8 +71,8 @@ var displayPlayerInfo = function(){
         var playerTwo = ($('body').find('#playerTwoName').val());
         console.log("player names =", playerOne, playerTwo);
         //add to object
-        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo};
-        console.log(playerNames);
+        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo};
+        console.log(gameInfo);
       break;
       case 3:
        playerOne = ($('body').find('#playerOneName').val());
@@ -77,7 +80,7 @@ var displayPlayerInfo = function(){
        var playerThree = ($('body').find('#playerThreeName').val());
       console.log("player names =", playerOne, playerTwo, playerThree);
       //add to object
-      playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+      gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
         playerThreeName: playerThree};
       break;
       case 4:
@@ -87,7 +90,7 @@ var displayPlayerInfo = function(){
         var playerFour = ($('body').find('#playerFourName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour);
         //add to object
-        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour};
       break;
       case 5:
@@ -98,7 +101,7 @@ var displayPlayerInfo = function(){
         var playerFive = ($('body').find('#playerFiveName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive);
         //add to object
-        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+        playerNames ={type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour, playerFiveName: playerFive};
       break;
       case 6:
@@ -109,7 +112,7 @@ var displayPlayerInfo = function(){
         playerFive = ($('body').find('#playerFiveName').val());
         var playerSix = ($('body').find('#playerSixName').val());
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive, playerSix);
-        playerNames ={ playerOneName: playerOne, playerTwoName: playerTwo,
+        gameInfo ={ type: gameType, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour,
           playerFiveName: playerFive, playerSixName: playerSix};
       break;
@@ -120,7 +123,7 @@ var displayPlayerInfo = function(){
     $.ajax({
       type: 'POST',
       url: '/',
-      data: playerNames,
+      data: gameInfo,
       success: function(data){
         console.log("Ajax success:", data);
       }
