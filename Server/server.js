@@ -5,6 +5,9 @@ var path = require( 'path' );
 var router = express.Router();
 var bodyParser = require('body-parser');
 var urlEncodedParser = bodyParser.urlencoded({ extended: false});
+// var fireStarter = require('../modules/randomFire');
+// var special = require('../modules/speciality');
+var names = require('../modules/getPlayerName');
 
 //start listening
 app.listen( port, function(){
@@ -19,8 +22,13 @@ app.get('/', function(req, res){
 
 //set public folder for use
 app.use(express.static('public'));
+//use bodyParser
+app.use(urlEncodedParser);
 
 app.post('/', function(req, res){
   console.log('You hit the post route');
+    var playerNames = names(req.body);
+    console.log(playerNames);
+    console.log(gameType);
   res.send("hello from the server");
 });
