@@ -95,7 +95,7 @@ var gameSetup = function(){
       case 5:
         console.log("player names =", playerOne, playerTwo, playerThree, playerFour,playerFive);
         //add to object
-        playerNames ={type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
+        gameInfo ={type: gameType, players:numPlayers, playerOneName: playerOne, playerTwoName: playerTwo,
           playerThreeName: playerThree, playerFourName:playerFour, playerFiveName: playerFive};
       break;
       case 6:
