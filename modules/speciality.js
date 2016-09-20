@@ -22,7 +22,7 @@ for (var i = 0; i < playerNames.length; i++) {
   shuffleArray(numbers);
   var random = numbers.shift();
   console.log("this is random:", random);
-  var player = {name: playerNames[ i ], randomNum: random};
+  var player = {player: playerNames[ i ], randomNum: random};
   randoms.push(player);
 }//end for
 console.log("This is the random array:", randoms);

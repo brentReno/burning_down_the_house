@@ -35,5 +35,5 @@ app.post('/', function(req, res){
     console.log(playerNames);
     console.log(gameType);
     console.log(specialNum);
-  res.send("hello from the server");
+  res.send(specialNum);
 });

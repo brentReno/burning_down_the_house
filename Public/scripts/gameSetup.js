@@ -114,8 +114,13 @@ var gameSetup = function(){
       data: gameInfo,
       success: function(data){
         console.log("Ajax success:", data);
+        //create object to send
+          $.ajax({
+            
+
+          });//end get AJAX
       }
-    });//end AJAX call
+    });//end post AJAX call
     // randomly assign color on server??
     //randomly assign specialty on server??
   });
