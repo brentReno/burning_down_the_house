@@ -1,6 +1,6 @@
 var express = require('express');
 var app     = express();
-var port    =   process.env.PORT || 3000;
+var port    =   process.env.PORT || 3010;
 var path = require( 'path' );
 var router = express.Router();
 var bodyParser = require('body-parser');
@@ -13,7 +13,7 @@ var names = require('../modules/getPlayerName');
 
 //start listening
 app.listen( port, function(){
-  console.log('The server is listening on port 3000');
+  console.log('The server is listening on:', port);
 });
 
 //set up base url
